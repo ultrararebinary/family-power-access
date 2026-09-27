@@ -4,7 +4,7 @@
 
 **Created**: 2026-09-27
 
-**Status**: Draft
+**Status**: Implemented
 
 **Input**: « Rendre Family Power Access accessible depuis la bar de navigations, cliquable, avec un simple hello world affiché dessus. »
 

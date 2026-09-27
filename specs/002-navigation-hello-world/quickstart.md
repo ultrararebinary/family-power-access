@@ -76,5 +76,15 @@ Home Assistant Container `family-power-release` (port 8125) :
   disponible (DNS vers PyPI bloqué); seule la version du paquet racine a été ajustée dans
   `uv.lock`.
 
-Validation HACS de la release `0.2.0` : à consigner après publication et installation sur
-l'instance isolée.
+Validation HACS effectuée le 27 septembre 2026 sur l'instance isolée :
+
+- HACS a téléchargé la [release stable `0.2.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.2.0);
+  après son téléchargement et le redémarrage de Home Assistant, la fiche de l'intégration
+  indiquait **Version 0.2.0**.
+- La configuration `Family Power Access` est conservée et contient toujours 1 entité.
+- L'entrée de navigation est présente et ouvre `/family-power-access`, où `Hello World` est
+  visible.
+
+Revue finale : README et quickstart couvrent FR-001–FR-007 et SC-001–SC-004; la configuration,
+les commandes Zigbee, les codes enfants, les calendriers, les quotas et les détails d'usage
+restent hors périmètre de cette spec.

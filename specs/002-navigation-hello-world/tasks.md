@@ -77,9 +77,9 @@ dans une release stable.
 - [X] T012 Synchroniser la version mineure `0.2.0` dans `custom_components/family_power_access/manifest.json`, `pyproject.toml`, `uv.lock` et `tests/test_package.py` après validation du comportement local.
 - [X] T013 Exécuter pytest, Ruff et Pyright sur `custom_components/family_power_access/` et `tests/`, puis `check_config` dans le conteneur Home Assistant; consigner les résultats dans `specs/002-navigation-hello-world/quickstart.md`.
 - [X] T014 Suivre `specs/002-navigation-hello-world/quickstart.md` dans l'instance locale pour vérifier le clic, le délai inférieur à 2 secondes, la fenêtre étroite, le rechargement, le redémarrage, le retrait au déchargement et le maintien du capteur; consigner les observations.
-- [ ] T015 Préparer les notes de version dans `README.md`, créer le tag correspondant à la version du `custom_components/family_power_access/manifest.json` et publier la release GitHub stable `0.2.0` après les validations locales.
-- [ ] T016 Installer la release stable `0.2.0` par HACS dans l'instance isolée et consigner dans `specs/002-navigation-hello-world/quickstart.md` la version active, l'entrée de navigation, la page `Hello World` et la préservation de la configuration et du capteur existants.
-- [ ] T017 Relire `README.md` et `specs/002-navigation-hello-world/quickstart.md` contre FR-001 à FR-007, SC-001 à SC-004 et `specs/002-navigation-hello-world/contracts/navigation.md`; corriger toute divergence et noter les limites restantes.
+- [X] T015 Préparer les notes de version dans `README.md`, créer le tag correspondant à la version du `custom_components/family_power_access/manifest.json` et publier la release GitHub stable `0.2.0` après les validations locales.
+- [X] T016 Installer la release stable `0.2.0` par HACS dans l'instance isolée et consigner dans `specs/002-navigation-hello-world/quickstart.md` la version active, l'entrée de navigation, la page `Hello World` et la préservation de la configuration et du capteur existants.
+- [X] T017 Relire `README.md` et `specs/002-navigation-hello-world/quickstart.md` contre FR-001 à FR-007, SC-001 à SC-004 et `specs/002-navigation-hello-world/contracts/navigation.md`; corriger toute divergence et noter les limites restantes.
 
 ---
 
