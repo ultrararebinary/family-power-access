@@ -92,7 +92,7 @@ installée automatiquement.
 - [X] T022 [US2] Ajouter dans `README.md` l'import du blueprint par URL, son activation et sa désactivation, le commutateur HACS des préversions sur OFF, la distinction version téléchargée/version active, l'état « Pending restart » et la réinstallation stable avant redémarrage après un téléchargement interrompu.
 - [X] T023 [US2] Préparer `0.1.1` en synchronisant le numéro de `custom_components/family_power_access/manifest.json` avec le tag stable, puis publier la release GitHub après validation et consigner ses notes dans `README.md`.
 - [X] T024 [US2] Suivre `specs/001-hello-world-update/quickstart.md` dans l'instance HACS isolée pour vérifier la découverte de `0.1.1` après actualisation réussie du dépôt, l'installation automatique activée, la cible unique, la version téléchargée avant redémarrage puis active après redémarrage; consigner les résultats.
-- [ ] T025 [US2] Vérifier dans `specs/001-hello-world-update/quickstart.md` les parcours préversion exclue, automatisation désactivée, GitHub indisponible, erreur de `update.install` dans la trace et réinstallation stable après téléchargement interrompu; consigner tout écart et corriger `README.md` si le guide de récupération manque.
+- [X] T025 [US2] Clôture acceptée avec écarts consignés : le parcours préversion exclue, l'indisponibilité GitHub et le téléchargement interrompu n'ont pas été simulés; l'automatisation a été désactivée après le test et l'erreur `update.install` est couverte par un test de trace. La procédure de réinstallation stable figure dans `README.md`.
 
 **Checkpoint**: Les deux récits sont vérifiés; le parent peut activer ou désactiver les mises à
 jour automatiques sans installer de préversion ni provoquer un redémarrage silencieux.
@@ -181,8 +181,8 @@ La documentation T022 [US2] README.md suit les modifications US1 du même fichie
 - Les tests T007, T008 et T020 existent et passent après implémentation. Leur échec initial
   (« phase rouge ») n'a pas été enregistré séparément; cette partie du processus TDD ne peut
   pas être attestée rétroactivement.
-- T025 reste à terminer : les scénarios de préversion, d'indisponibilité GitHub et de reprise
-  après téléchargement interrompu sont documentés mais n'ont pas été provoqués dans l'instance.
+- Les scénarios T025 de préversion, d'indisponibilité GitHub et de reprise après téléchargement
+  interrompu n'ont pas été provoqués dans l'instance; leur report est accepté à la clôture.
 
 - Chaque tâche `[P]` possède des fichiers propres; les tâches de publication et de validation
   HACS dépendent des releases et ne sont pas parallélisées avec elles.
@@ -190,3 +190,12 @@ La documentation T022 [US2] README.md suit les modifications US1 du même fichie
   l'automatisation Home Assistant déclenche leur installation.
 - Le projet ne promet pas de restauration automatique des fichiers après un échec de
   téléchargement HACS; la réinstallation stable avant redémarrage est documentée.
+
+## Clôture de la spec 001
+
+Le 27 septembre 2026, l'utilisateur a accepté de clore cette spécification sans exécuter les
+scénarios non bloquants ci-dessus. SC-001 n'a pas été chronométré formellement. Les versions
+stables `0.1.0` et `0.1.1`, le parcours HACS, le capteur après redémarrage et l'absence de
+redémarrage automatique ont été vérifiés. Aucun travail supplémentaire n'est requis pour
+rouvrir cette spec; les scénarios laissés de côté pourront être repris dans une future spec si
+nécessaire.

@@ -144,4 +144,5 @@ stable sans copie manuelle, et qu'aucun redémarrage n'est déclenché à l'insu
   et vérifie son apparition dans la trace et la cible unique.
 - Les scénarios HACS de préversion, GitHub indisponible et téléchargement interrompu n'ont
   pas été provoqués dans cette instance. Le README décrit la récupération après échec; ces
-  cas restent à valider en test complémentaire.
+  cas restent à valider en test complémentaire. Leur report et l'absence de chronométrage de
+  SC-001 ont été acceptés par l'utilisateur à la clôture de Spec 001 le 27 septembre 2026.
