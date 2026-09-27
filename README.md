@@ -11,10 +11,12 @@ ni codes enfants, ni calendriers, ni quotas.
 - HACS configuré pour l'installation depuis GitHub.
 - Le dépôt GitHub public
   [`ultrararebinary/family-power-access`](https://github.com/ultrararebinary/family-power-access),
-  qui contient la [release stable `0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0).
+  avec les releases stables
+  [`0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0)
+  et [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1).
 
 La branche par défaut est masquée dans HACS : le parcours d'installation pris en charge
-commence avec la release `0.1.0`. Pour développer localement, monter `custom_components/`
+commence avec la release `0.1.0`. La version actuelle est `0.1.1`. Pour développer localement, monter `custom_components/`
 dans un conteneur Home Assistant; voir le
 [guide de validation](specs/001-hello-world-update/quickstart.md).
 

@@ -1,7 +1,7 @@
 {
   "domain": "family_power_access",
   "name": "Family Power Access",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "documentation": "https://github.com/ultrararebinary/family-power-access",
   "issue_tracker": "https://github.com/ultrararebinary/family-power-access/issues",
   "config_flow": true,

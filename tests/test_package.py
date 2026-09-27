@@ -22,7 +22,7 @@ def test_one_custom_integration_and_matching_versions() -> None:
     project = tomllib.loads((ROOT / "pyproject.toml").read_text())
     assert manifest["domain"] == "family_power_access"
     assert manifest["name"] == "Family Power Access"
-    assert manifest["version"] == project["project"]["version"] == "0.1.0"
+    assert manifest["version"] == project["project"]["version"] == "0.1.1"
     assert manifest["config_flow"] is True
     assert manifest["single_config_entry"] is True
     assert manifest["requirements"] == []
