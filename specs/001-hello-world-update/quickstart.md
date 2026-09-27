@@ -127,7 +127,9 @@ stable sans copie manuelle, et qu'aucun redémarrage n'est déclenché à l'insu
   Assistant simule un échec de `update.install` et vérifie l'erreur dans la trace et la cible
   unique. Le contrôle de configuration du conteneur ne remplace pas l'ajout manuel dans
   l'interface.
-- Le dépôt public et la release stable `0.1.0` ont été vérifiés le 27 septembre 2026. Le
-  parcours HACS et les mesures SC-001/SC-002 restent à exécuter : l'instance de développement
-  est sur son écran d'accueil initial et HACS n'y est pas configuré. La release `0.1.1` n'est
-  pas encore publiée. Les scénarios de la section 4 qui requièrent HACS ne sont pas vérifiés.
+- Le dépôt public et la release stable `0.1.0` ont été vérifiés le 27 septembre 2026. Une
+  instance de validation séparée `family-power-release` répond sur le port `8125`; HACS 2.0.5
+  y est installé et `check_config` réussit. L'instance est sur son écran d'accueil initial :
+  la création du compte Home Assistant de validation et l'autorisation OAuth GitHub de HACS
+  restent à terminer dans l'interface. Le parcours HACS et les mesures SC-001/SC-002 ne sont
+  donc pas encore vérifiés. La release `0.1.1` n'est pas publiée.
