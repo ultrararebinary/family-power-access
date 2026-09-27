@@ -1,0 +1,33 @@
+blueprint:
+  name: Family Power Access auto update
+  description: Install the latest stable Family Power Access HACS update at the chosen local time.
+  domain: automation
+  input:
+    update_entity:
+      name: Family Power Access update entity
+      description: Select only the HACS update entity for the Family Power Access repository.
+      selector:
+        entity:
+          domain: update
+    install_time:
+      name: Installation time
+      description: Local time when Home Assistant checks and installs the selected update.
+      default: "21:00:00"
+      selector:
+        time: {}
+
+triggers:
+  - trigger: time
+    at: !input install_time
+
+conditions:
+  - condition: state
+    entity_id: !input update_entity
+    state: "on"
+
+actions:
+  - action: update.install
+    target:
+      entity_id: !input update_entity
+
+mode: single

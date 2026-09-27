@@ -1,0 +1,20 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Family Power Access est deja configure."
+    },
+    "step": {
+      "user": {
+        "title": "Family Power Access",
+        "description": "Creer l'entree Hello World de l'integration."
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "hello_world": {
+        "name": "Hello World"
+      }
+    }
+  }
+}

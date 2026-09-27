@@ -1,0 +1,36 @@
+[project]
+name = "family-power-access"
+version = "0.1.0"
+requires-python = ">=3.14.2"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "homeassistant==2026.9.3",
+    "pytest-homeassistant-custom-component==0.13.366",
+    "pytest>=9,<10",
+    "pyright>=1.1",
+    "ruff>=0.13",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+extend-exclude = [".specify"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pyright]
+pythonVersion = "3.14"
+typeCheckingMode = "basic"
+include = ["custom_components"]
+exclude = [".ha-runtime", ".venv"]
