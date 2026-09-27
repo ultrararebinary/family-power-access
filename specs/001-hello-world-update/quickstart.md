@@ -117,19 +117,31 @@ stable sans copie manuelle, et qu'aucun redémarrage n'est déclenché à l'insu
 
 ## Résultats observés le 27 septembre 2026
 
-- Le code monté dans le conteneur `homeassistant` utilise Home Assistant 2026.9.3 et Python
-  3.14.6. `python3 -m homeassistant --script check_config --config /config` termine avec le code
-  0. L'interface répond avec HTTP 200 depuis le conteneur, sur `/onboarding.html`.
+- Home Assistant 2026.9.3 tourne dans l'instance Container isolée `family-power-release`
+  (`http://127.0.0.1:8125/`). HACS 2.0.5 y est configuré et le dépôt
+  `ultrararebinary/family-power-access` est ajouté comme *Integration*.
+- HACS a téléchargé la release stable `0.1.0`. Après redémarrage, l'intégration a été ajoutée
+  sans champ et le capteur `Hello World` a affiché l'état `Hello World`. Le journal Recorder
+  a enregistré l'entrée à `16:45:25.956 UTC` et son premier état à `16:45:25.977 UTC` (environ
+  20 ms plus tard). Le temps SC-001 n'a pas été chronométré au départ du parcours utilisateur;
+  le capteur était visible dans les minutes suivant le flux d'ajout.
+- Pour le test de mise à jour, le blueprint a été importé depuis la release `0.1.0` puis
+  instancié en visant uniquement `update.family_power_access_update`, avec l'heure par défaut
+  `21:00`. HACS a détecté la release stable `0.1.1` après actualisation. La trace Home
+  Assistant montre l'action `update.install` avec `service_data: {}` et cette seule cible.
+- Après l'action, les fichiers HACS étaient en `0.1.1`, tandis que la page d'intégration
+  indiquait encore la version active `0.1.0` et Home Assistant signalait `HACS Restart
+  required`. Le conteneur était toujours actif : aucun redémarrage automatique n'a eu lieu.
+  Après le redémarrage manuel de l'instance de validation, la page de l'intégration a indiqué
+  `0.1.1`; l'entité `Hello World` affichait toujours le même état. L'automatisation de test a
+  ensuite été désactivée.
+- GitHub publie les releases stables
+  [`0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0) et
+  [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1).
 - Sur Python 3.14.2, `pytest tests -q` : 14 tests réussis. `ruff check .`,
   `ruff format --check custom_components tests` et `pyright custom_components` : réussis.
-- Les tests couvrent la création d'entrée sans champ, l'unicité, le capteur, le rechargement,
-  le déchargement et l'absence d'appel HTTP de l'intégration. Un test d'automatisation Home
-  Assistant simule un échec de `update.install` et vérifie l'erreur dans la trace et la cible
-  unique. Le contrôle de configuration du conteneur ne remplace pas l'ajout manuel dans
-  l'interface.
-- Le dépôt public et la release stable `0.1.0` ont été vérifiés le 27 septembre 2026. Une
-  instance de validation séparée `family-power-release` répond sur le port `8125`; HACS 2.0.5
-  y est installé et `check_config` réussit. L'instance est sur son écran d'accueil initial :
-  la création du compte Home Assistant de validation et l'autorisation OAuth GitHub de HACS
-  restent à terminer dans l'interface. Le parcours HACS et les mesures SC-001/SC-002 ne sont
-  donc pas encore vérifiés. La release `0.1.1` n'est pas publiée.
+  `check_config` a aussi réussi dans le conteneur. Un test simule un échec de `update.install`
+  et vérifie son apparition dans la trace et la cible unique.
+- Les scénarios HACS de préversion, GitHub indisponible et téléchargement interrompu n'ont
+  pas été provoqués dans cette instance. Le README décrit la récupération après échec; ces
+  cas restent à valider en test complémentaire.

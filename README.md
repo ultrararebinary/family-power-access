@@ -41,11 +41,19 @@ téléchargée manuellement depuis HACS.
 Pour autoriser l'installation automatique, importer le
 [blueprint de mise à jour](blueprints/automation/family_power_access_auto_update.yaml) dans
 Home Assistant depuis son URL GitHub
-(`https://raw.githubusercontent.com/ultrararebinary/family-power-access/0.1.0/blueprints/automation/family_power_access_auto_update.yaml`),
+(`https://raw.githubusercontent.com/ultrararebinary/family-power-access/0.1.1/blueprints/automation/family_power_access_auto_update.yaml`),
 sélectionner **uniquement** l'entité `update` HACS de ce
 dépôt, choisir l'heure de contrôle (21 h par défaut), puis créer et activer
 l'automatisation. La désactiver dans Home Assistant pour revenir aux mises à jour manuelles.
 L'automatisation n'est pas créée lors de l'installation de l'intégration.
+
+### Releases
+
+- [`0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0) :
+  première intégration avec le capteur de diagnostic `Hello World`.
+- [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1) :
+  version utilisée pour valider le téléchargement HACS, le statut de redémarrage requis et
+  l'activation de la nouvelle version après redémarrage manuel.
 
 L'automatisation appelle `update.install` pour cette seule entité, sans imposer de version
 ou de branche. Elle ne redémarre pas Home Assistant. Après un téléchargement réussi, HACS

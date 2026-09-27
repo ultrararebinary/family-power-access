@@ -66,7 +66,7 @@ l'intégration sans paramètre d'appareil, vérifier le capteur et son retour ap
 - [X] T016 [US1] Documenter dans `README.md` les prérequis HACS, l'ajout du dépôt personnalisé après la première release stable, le montage local avant release, l'ajout dans Home Assistant et le capteur attendu.
 - [X] T017 [US1] Préparer le dépôt GitHub public puis renseigner son URL réelle, sa documentation, son suivi de problèmes et ses mainteneurs dans `custom_components/family_power_access/manifest.json` et `README.md`; obtenir l'autorisation requise avant la publication publique.
 - [X] T018 [US1] Préparer et publier, après validation, la release stable `0.1.0` dont le tag correspond exactement à `custom_components/family_power_access/manifest.json`; consigner l'URL de release et la compatibilité dans `README.md`.
-- [ ] T019 [US1] Exécuter le parcours local puis l'installation HACS `0.1.0` de `specs/001-hello-world-update/quickstart.md` dans une configuration Container séparée, et y consigner les résultats et les mesures SC-001/SC-002.
+- [X] T019 [US1] Exécuter le parcours local puis l'installation HACS `0.1.0` de `specs/001-hello-world-update/quickstart.md` dans une configuration Container séparée, et y consigner les résultats et les mesures SC-001/SC-002.
 
 **Checkpoint**: US1 est démontrable seule, sans automatisation de mise à jour.
 
@@ -90,8 +90,8 @@ installée automatiquement.
 
 - [X] T021 [US2] Créer `blueprints/automation/family_power_access_auto_update.yaml` avec un sélecteur d'entité `update`, une heure configurable par défaut à `21:00`, une condition de mise à jour disponible et l'action `update.install` sur cette seule cible; laisser une erreur d'action visible dans la trace Home Assistant, sans autre cible ni redémarrage, et ne créer aucune automatisation active par défaut.
 - [X] T022 [US2] Ajouter dans `README.md` l'import du blueprint par URL, son activation et sa désactivation, le commutateur HACS des préversions sur OFF, la distinction version téléchargée/version active, l'état « Pending restart » et la réinstallation stable avant redémarrage après un téléchargement interrompu.
-- [ ] T023 [US2] Préparer `0.1.1` en synchronisant le numéro de `custom_components/family_power_access/manifest.json` avec le tag stable, puis publier la release GitHub après validation et consigner ses notes dans `README.md`.
-- [ ] T024 [US2] Suivre `specs/001-hello-world-update/quickstart.md` dans l'instance HACS isolée pour vérifier la découverte de `0.1.1` après actualisation réussie du dépôt, l'installation automatique activée, la cible unique, la version téléchargée avant redémarrage puis active après redémarrage; consigner les résultats.
+- [X] T023 [US2] Préparer `0.1.1` en synchronisant le numéro de `custom_components/family_power_access/manifest.json` avec le tag stable, puis publier la release GitHub après validation et consigner ses notes dans `README.md`.
+- [X] T024 [US2] Suivre `specs/001-hello-world-update/quickstart.md` dans l'instance HACS isolée pour vérifier la découverte de `0.1.1` après actualisation réussie du dépôt, l'installation automatique activée, la cible unique, la version téléchargée avant redémarrage puis active après redémarrage; consigner les résultats.
 - [ ] T025 [US2] Vérifier dans `specs/001-hello-world-update/quickstart.md` les parcours préversion exclue, automatisation désactivée, GitHub indisponible, erreur de `update.install` dans la trace et réinstallation stable après téléchargement interrompu; consigner tout écart et corriger `README.md` si le guide de récupération manque.
 
 **Checkpoint**: Les deux récits sont vérifiés; le parent peut activer ou désactiver les mises à
@@ -103,7 +103,7 @@ jour automatiques sans installer de préversion ni provoquer un redémarrage sil
 
 **Purpose**: Vérifier l'ensemble du comportement et la cohérence de la livraison.
 
-- [ ] T026 Exécuter les contrôles Ruff, Pyright et pytest définis dans `pyproject.toml` et le parcours de `specs/001-hello-world-update/quickstart.md`; consigner les résultats et les limites observées dans `specs/001-hello-world-update/quickstart.md`.
+- [X] T026 Exécuter les contrôles Ruff, Pyright et pytest définis dans `pyproject.toml` et le parcours de `specs/001-hello-world-update/quickstart.md`; consigner les résultats et les limites observées dans `specs/001-hello-world-update/quickstart.md`.
 - [X] T027 Relire `README.md` et `specs/001-hello-world-update/quickstart.md` contre FR-001 à FR-011, les contrats et l'exception exploratoire de `specs/001-hello-world-update/spec.md`; corriger les instructions d'installation, de mise à jour ou de récupération qui ne correspondent pas au comportement livré.
 
 ## Dependencies & Execution Order
@@ -181,6 +181,8 @@ La documentation T022 [US2] README.md suit les modifications US1 du même fichie
 - Les tests T007, T008 et T020 existent et passent après implémentation. Leur échec initial
   (« phase rouge ») n'a pas été enregistré séparément; cette partie du processus TDD ne peut
   pas être attestée rétroactivement.
+- T025 reste à terminer : les scénarios de préversion, d'indisponibilité GitHub et de reprise
+  après téléchargement interrompu sont documentés mais n'ont pas été provoqués dans l'instance.
 
 - Chaque tâche `[P]` possède des fichiers propres; les tâches de publication et de validation
   HACS dépendent des releases et ne sont pas parallélisées avec elles.
