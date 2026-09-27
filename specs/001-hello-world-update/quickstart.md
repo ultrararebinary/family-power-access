@@ -2,16 +2,17 @@
 
 Ce guide valide les parcours de [spec.md](spec.md) avec les contrats
 [Home Assistant](contracts/home-assistant.md) et [GitHub/HACS](contracts/github-releases.md).
-Il décrit des contrôles à exécuter après l'implémentation; aucune release GitHub n'existe encore
-dans le checkout actuel. Sans release stable, le montage local de l'étape 1 permet le test,
-et le parcours HACS pris en charge par ce projet commence après la première release.
+Il décrit des contrôles à exécuter après l'implémentation. La
+[release stable `0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0)
+est publiée; le parcours HACS peut maintenant être validé dans une configuration séparée.
 
 ## Prérequis
 
 - Mac Apple silicon avec Apple `container` et image officielle Home Assistant `2026.9.3`.
 - Dépôt de travail dans `/Users/yann/Documents/ChatGPT/David`.
 - Pour le parcours release : dépôt GitHub public publié, HACS configuré dans une instance de
-  validation, releases stables `0.1.0` et `0.1.1` créées dans cet ordre.
+  validation, release stable `0.1.0` publiée, puis release `0.1.1` à créer après le premier
+  parcours d'installation HACS.
 - Pour les contrôles Python : environnement 3.14.2 ou ultérieur avec les dépendances de
   développement prévues dans le plan. Le Python 3.12 du Mac ne remplace pas cet environnement.
 
@@ -126,7 +127,7 @@ stable sans copie manuelle, et qu'aucun redémarrage n'est déclenché à l'insu
   Assistant simule un échec de `update.install` et vérifie l'erreur dans la trace et la cible
   unique. Le contrôle de configuration du conteneur ne remplace pas l'ajout manuel dans
   l'interface.
-- Le parcours HACS et les mesures SC-001/SC-002 restent à exécuter : l'instance est sur son
-  écran d'accueil initial, aucun dépôt distant Git n'est configuré, le jeton GitHub du CLI est
-  invalide et les releases `0.1.0`/`0.1.1` ne sont pas publiées. Les scénarios de la section 4
-  qui requièrent HACS ou une release réelle ne sont donc pas encore vérifiés.
+- Le dépôt public et la release stable `0.1.0` ont été vérifiés le 27 septembre 2026. Le
+  parcours HACS et les mesures SC-001/SC-002 restent à exécuter : l'instance de développement
+  est sur son écran d'accueil initial et HACS n'y est pas configuré. La release `0.1.1` n'est
+  pas encore publiée. Les scénarios de la section 4 qui requièrent HACS ne sont pas vérifiés.

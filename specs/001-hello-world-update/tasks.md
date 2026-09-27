@@ -64,8 +64,8 @@ l'intégration sans paramètre d'appareil, vérifier le capteur et son retour ap
 - [X] T014 [P] [US1] Créer `hacs.json` à la racine avec le nom de l'intégration et `hide_default_branch: true`, pour limiter le parcours d'installation aux releases publiées.
 - [X] T015 [P] [US1] Créer `brand/icon.png` au format et à la taille attendus par HACS pour l'intégration personnalisée.
 - [X] T016 [US1] Documenter dans `README.md` les prérequis HACS, l'ajout du dépôt personnalisé après la première release stable, le montage local avant release, l'ajout dans Home Assistant et le capteur attendu.
-- [ ] T017 [US1] Préparer le dépôt GitHub public puis renseigner son URL réelle, sa documentation, son suivi de problèmes et ses mainteneurs dans `custom_components/family_power_access/manifest.json` et `README.md`; obtenir l'autorisation requise avant la publication publique.
-- [ ] T018 [US1] Préparer et publier, après validation, la release stable `0.1.0` dont le tag correspond exactement à `custom_components/family_power_access/manifest.json`; consigner l'URL de release et la compatibilité dans `README.md`.
+- [X] T017 [US1] Préparer le dépôt GitHub public puis renseigner son URL réelle, sa documentation, son suivi de problèmes et ses mainteneurs dans `custom_components/family_power_access/manifest.json` et `README.md`; obtenir l'autorisation requise avant la publication publique.
+- [X] T018 [US1] Préparer et publier, après validation, la release stable `0.1.0` dont le tag correspond exactement à `custom_components/family_power_access/manifest.json`; consigner l'URL de release et la compatibilité dans `README.md`.
 - [ ] T019 [US1] Exécuter le parcours local puis l'installation HACS `0.1.0` de `specs/001-hello-world-update/quickstart.md` dans une configuration Container séparée, et y consigner les résultats et les mesures SC-001/SC-002.
 
 **Checkpoint**: US1 est démontrable seule, sans automatisation de mise à jour.

@@ -9,13 +9,14 @@ ni codes enfants, ni calendriers, ni quotas.
 
 - Home Assistant Container 2026.9.3 ou version compatible plus récente.
 - HACS configuré pour l'installation depuis GitHub.
-- Un dépôt GitHub public contenant une release stable. Le dépôt prévu est
-  `ultrararebinary/family-power-access`; **aucune release n'a encore été publiée**.
+- Le dépôt GitHub public
+  [`ultrararebinary/family-power-access`](https://github.com/ultrararebinary/family-power-access),
+  qui contient la [release stable `0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0).
 
-La première release prévue est `0.1.0`. La branche par défaut est masquée dans HACS : le
-parcours d'installation pris en charge commence avec cette release. Avant publication, le
-développement se teste en montant `custom_components/` dans un conteneur Home Assistant;
-voir le [guide de validation](specs/001-hello-world-update/quickstart.md).
+La branche par défaut est masquée dans HACS : le parcours d'installation pris en charge
+commence avec la release `0.1.0`. Pour développer localement, monter `custom_components/`
+dans un conteneur Home Assistant; voir le
+[guide de validation](specs/001-hello-world-update/quickstart.md).
 
 ## Installer l'intégration
 
