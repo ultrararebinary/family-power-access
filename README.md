@@ -12,11 +12,12 @@ ni codes enfants, ni calendriers, ni quotas.
 - Le dépôt GitHub public
   [`ultrararebinary/family-power-access`](https://github.com/ultrararebinary/family-power-access),
   avec les releases stables
-  [`0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0)
-  et [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1).
+  [`0.1.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.0),
+  [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1) et
+  [`0.2.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.2.0).
 
 La branche par défaut est masquée dans HACS : le parcours d'installation pris en charge
-commence avec la release `0.1.0`. La version actuelle est `0.1.1`. Pour développer localement, monter `custom_components/`
+commence avec la release `0.1.0`. La version actuelle est `0.2.0`. Pour développer localement, monter `custom_components/`
 dans un conteneur Home Assistant; voir le
 [guide de validation](specs/001-hello-world-update/quickstart.md).
 
@@ -28,6 +29,12 @@ dans un conteneur Home Assistant; voir le
 3. Dans **Paramètres → Appareils et services → Ajouter une intégration**, choisir
    **Family Power Access**. Aucun paramètre d'appareil n'est requis.
 4. Vérifier que l'entité **Hello World** affiche l'état `Hello World`.
+
+Après l'ajout de l'intégration, une entrée **Family Power Access** apparaît aussi dans la
+barre latérale de Home Assistant. La sélectionner ouvre sa page dédiée, qui affiche
+`Hello World`. L'entrée suit le cycle de vie de l'intégration : elle disparaît si celle-ci
+est déchargée et revient après son rechargement. Sur mobile, ouvrir la barre latérale repliée
+pour la sélectionner.
 
 La configuration et l'entité reviennent après un redémarrage de Home Assistant. Le message
 Hello World reste disponible même si GitHub est inaccessible.
@@ -41,7 +48,7 @@ téléchargée manuellement depuis HACS.
 Pour autoriser l'installation automatique, importer le
 [blueprint de mise à jour](blueprints/automation/family_power_access_auto_update.yaml) dans
 Home Assistant depuis son URL GitHub
-(`https://raw.githubusercontent.com/ultrararebinary/family-power-access/0.1.1/blueprints/automation/family_power_access_auto_update.yaml`),
+(`https://raw.githubusercontent.com/ultrararebinary/family-power-access/0.2.0/blueprints/automation/family_power_access_auto_update.yaml`),
 sélectionner **uniquement** l'entité `update` HACS de ce
 dépôt, choisir l'heure de contrôle (21 h par défaut), puis créer et activer
 l'automatisation. La désactiver dans Home Assistant pour revenir aux mises à jour manuelles.
@@ -54,6 +61,9 @@ L'automatisation n'est pas créée lors de l'installation de l'intégration.
 - [`0.1.1`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.1.1) :
   version utilisée pour valider le téléchargement HACS, le statut de redémarrage requis et
   l'activation de la nouvelle version après redémarrage manuel.
+- [`0.2.0`](https://github.com/ultrararebinary/family-power-access/releases/tag/0.2.0) :
+  ajoute la page `Hello World` accessible depuis la barre latérale après configuration de
+  l'intégration; conserve le capteur de diagnostic et le parcours de mise à jour HACS.
 
 L'automatisation appelle `update.install` pour cette seule entité, sans imposer de version
 ou de branche. Elle ne redémarre pas Home Assistant. Après un téléchargement réussi, HACS

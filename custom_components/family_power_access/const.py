@@ -3,3 +3,8 @@
 DOMAIN = "family_power_access"
 NAME = "Family Power Access"
 HELLO_WORLD_UNIQUE_ID = "family_power_access_hello_world"
+PANEL_URL_PATH = "family-power-access"
+PANEL_ELEMENT_NAME = "family-power-access-panel"
+PANEL_MODULE_URL = "/api/family_power_access/frontend/panel.js"
+PANEL_ICON = "mdi:power-plug"
+PANEL_STATIC_PATH = "/api/family_power_access/frontend"
